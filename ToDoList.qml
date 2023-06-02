@@ -30,7 +30,7 @@ Frame {
             width: parent.width
 
             CheckBox {
-
+                checked: model.done
             }
             TextField {
                 //чтобы поле ввода занимала максимальное пространство
