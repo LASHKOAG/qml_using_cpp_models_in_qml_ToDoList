@@ -1,5 +1,14 @@
 # qml_using_cpp_models_in_qml_ToDoList
 
+
+Using C++ Models in QML {tutorial}
+
+Qt Group
+
+https://www.youtube.com/watch?v=9BcAYDlpuT8
+
+
+
 Добавить model cpp
 
 Добавить новый ...
