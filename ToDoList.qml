@@ -43,6 +43,8 @@ Frame {
                 Layout.fillWidth: true
                 //5
                 text: model.description
+                //7 чтобы сохранить изменения текста в модели. Отработает либо после Enter, либо когда поменяется фокус
+                onEditingFinished: model.description = text
 
             }
         }
