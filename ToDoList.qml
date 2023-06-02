@@ -34,6 +34,9 @@ Frame {
                 //4
                 checked: model.done
                 //run program - TextField empty, need to add text
+
+                //6 чтобы изменения в квадратике сохранились в модели
+                onClicked: model.done = checked
             }
             TextField {
                 //чтобы поле ввода занимала максимальное пространство
