@@ -9,7 +9,22 @@ Frame {
         implicitHeight: 250
         clip: true
 
-        model: 100
+        //1
+        //model: 100
+
+        //2
+        model: ListModel {
+            ListElement {
+                //done: - role; description: -role
+                done: true
+                description: "Wash the car"
+            }
+            ListElement {
+                //done: - role; description: -role
+                done: false
+                description: "Fix the sink"
+            }
+        }
 
         delegate: RowLayout {
             width: parent.width
