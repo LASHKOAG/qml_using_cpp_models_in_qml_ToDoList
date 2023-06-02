@@ -14,6 +14,7 @@ Frame {
 
         //2
         model: ListModel {
+            //3
             ListElement {
                 //done: - role; description: -role
                 done: true
@@ -30,11 +31,16 @@ Frame {
             width: parent.width
 
             CheckBox {
+                //4
                 checked: model.done
+                //run program - TextField empty, need to add text
             }
             TextField {
                 //чтобы поле ввода занимала максимальное пространство
                 Layout.fillWidth: true
+                //5
+                text: model.description
+
             }
         }
     }
