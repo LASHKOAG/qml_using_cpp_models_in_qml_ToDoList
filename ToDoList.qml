@@ -12,11 +12,14 @@ Frame {
         model: 100
 
         delegate: RowLayout {
+            width: parent.width
+
             CheckBox {
 
             }
             TextField {
-
+                //чтобы поле ввода занимала максимальное пространство
+                Layout.fillWidth: true
             }
         }
     }
