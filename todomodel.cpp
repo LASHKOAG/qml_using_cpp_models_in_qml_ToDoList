@@ -41,3 +41,13 @@ Qt::ItemFlags ToDoModel::flags(const QModelIndex &index) const
 
     return Qt::ItemIsEditable; // FIXME: Implement me!
 }
+
+//11
+QHash<int, QByteArray> ToDoModel::roleNames() const
+{
+    QHash<int, QByteArray> names;
+    names[DoneRole] = "done";
+    names[DescriptionRole] = "description";
+
+    return names;
+}

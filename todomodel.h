@@ -10,6 +10,12 @@ class ToDoModel : public QAbstractListModel
 public:
     explicit ToDoModel(QObject *parent = nullptr);
 
+    //9
+    enum {
+        DoneRole = Qt::UserRole,
+        DescriptionRole
+    };
+
     // Basic functionality:
     int rowCount(const QModelIndex &parent = QModelIndex()) const override;
 
@@ -20,6 +26,9 @@ public:
                  int role = Qt::EditRole) override;
 
     Qt::ItemFlags flags(const QModelIndex& index) const override;
+
+    //10
+    virtual QHash<int, QByteArray> roleNames() const override;
 
 private:
 };
