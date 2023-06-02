@@ -13,6 +13,8 @@ int ToDoModel::rowCount(const QModelIndex &parent) const
         return 0;
 
     // FIXME: Implement me!
+    //12
+    return 100;  //это даст нам 100 строк в модели
 }
 
 QVariant ToDoModel::data(const QModelIndex &index, int role) const
