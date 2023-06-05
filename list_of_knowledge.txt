@@ -1,0 +1,32 @@
+
+передать объект структуры в фу-ию по ссылке
+
+struct
+
+QVector
+
+возврат фу-ией ообъекта
+
+
+QHash
+
+abstract class
+virtual function within a class
+
+наследование классов
+
+enum
+
+ListView
+model
+delegate
+
+qmlRegisterType
+
+how to add model cpp
+
+CheckBox
+
+TextField
+
+работа с массивом
