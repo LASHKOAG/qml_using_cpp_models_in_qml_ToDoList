@@ -72,7 +72,33 @@ ToDoList *ToDoModel::list() const
     return mList;
 }
 
+
+//50
 void ToDoModel::setList(ToDoList *list)
 {
+    beginResetModel();
+
+    if(mList){
+        mList->disconnect(this);
+    }
+
     mList = list;
+
+    if(mList){
+        connect(mList, &ToDoList::preItemAppended, this, [=](){
+            const int index = mList->items().size();
+            beginInsertRows(QModelIndex(), index, index);
+        });
+        connect(mList, &ToDoList::postItemAppended, this, [=](){
+            endInsertRows();
+        });
+        connect(mList, &ToDoList::preItemRemoved, this, [=](int index){
+            beginRemoveRows(QModelIndex(), index, index);
+        });
+        connect(mList, &ToDoList::postItemRemoved, this, [=](){
+            endRemoveRows();
+        });
+    }
+
+    endResetModel();
 }
