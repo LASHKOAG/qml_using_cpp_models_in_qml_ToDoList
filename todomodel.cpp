@@ -23,6 +23,13 @@ QVariant ToDoModel::data(const QModelIndex &index, int role) const
         return QVariant();
 
     // FIXME: Implement me!
+    //13
+    switch (role) {
+    case DoneRole:
+        return QVariant(false);
+    case DescriptionRole:
+        return QVariant(QStringLiteral("Test description"));
+    }
     return QVariant();
 }
 
