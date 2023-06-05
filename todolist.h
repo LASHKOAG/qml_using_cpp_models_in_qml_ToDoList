@@ -31,6 +31,17 @@ public:
     bool setItemAt(int index, const ToDoItem &item);
 
 signals:
+    //25
+    void preItemAppended();
+    //26
+    void postItemAppended();
+
+    //27
+    void preItemRemoved(int index);
+    //28
+    void postItemRemoved();
+
+    //модель будет уведомлена до изменения и после
 
 public slots:
     //23
