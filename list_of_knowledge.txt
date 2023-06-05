@@ -30,3 +30,6 @@ CheckBox
 TextField
 
 работа с массивом
+
+#include <QQmlContext>
+

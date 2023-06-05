@@ -4,6 +4,10 @@
 //14
 #include "todomodel.h"
 
+//39
+#include <QQmlContext>
+//40
+#include "todolist.h"
 
 int main(int argc, char *argv[])
 {
