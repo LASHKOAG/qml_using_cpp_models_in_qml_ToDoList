@@ -30,7 +30,7 @@ Frame {
 //            }
 //        }
 
-        //17
+        //17 change model to model cpp
         model: ToDoModel {
 
         }
