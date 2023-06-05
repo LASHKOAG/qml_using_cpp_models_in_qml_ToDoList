@@ -18,7 +18,14 @@ int main(int argc, char *argv[])
     //15
     qmlRegisterType<ToDoModel>("ToDo", 1, 0, "ToDoModel");
 
+    //41
+    ToDoList toDoList;
+
     QQmlApplicationEngine engine;
+
+    //42 доступен в любом файле qml
+    engine.rootContext()->setContextProperty(QStringLiteral("toDoList"), &toDoList);
+
     const QUrl url(QStringLiteral("qrc:/main.qml"));
     QObject::connect(&engine, &QQmlApplicationEngine::objectCreated,
                      &app, [url](QObject *obj, const QUrl &objUrl) {
