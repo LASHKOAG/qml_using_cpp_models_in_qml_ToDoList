@@ -9,10 +9,16 @@ import ToDo 1.0
 //62 add ColumnLayout
 ColumnLayout {
     Frame {
+        //64
+        Layout.fillWidth: true
+
         ListView {
             implicitWidth: 250
             implicitHeight: 250
             clip: true
+
+            //65
+            anchors.fill: parent
 
             //1
             //model: 100
@@ -69,9 +75,19 @@ ColumnLayout {
     RowLayout {
         Button {
             text: qsTr("Add new item")
+            //64
+            Layout.fillWidth: true
+
+            //65
+            onClicked: toDoList.appendItem()
         }
         Button {
             text: qsTr("Remove completed")
+            //64
+            Layout.fillWidth: true
+
+            //66
+            onClicked: toDoList.removeCompletedItems()
         }
     }
 
