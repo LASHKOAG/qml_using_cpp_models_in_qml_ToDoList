@@ -27,6 +27,9 @@ class ToDoList : public QObject
 public:
     explicit ToDoList(QObject *parent = nullptr);
 
+    //29 добавить возможность доступа к данным
+    QVector<ToDoItem> items() const;
+
     //22 позволит изменять данные списка дел
     bool setItemAt(int index, const ToDoItem &item);
 
