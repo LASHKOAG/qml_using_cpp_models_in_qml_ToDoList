@@ -15,33 +15,71 @@ int ToDoModel::rowCount(const QModelIndex &parent) const
 {
     // For list models only the root node (an invalid parent) should return the list's size. For all
     // other (valid) parents, rowCount() should return 0 so that it does not become a tree model.
-    if (parent.isValid())
+    //51
+    //if (parent.isValid())
+    if (parent.isValid() || !mList)
         return 0;
 
+    //52
     // FIXME: Implement me!
     //12
-    return 100;  //это даст нам 100 строк в модели
+    //return 100;  //это даст нам 100 строк в модели
+    return mList->items().size();
 }
 
 QVariant ToDoModel::data(const QModelIndex &index, int role) const
 {
-    if (!index.isValid())
+    //53
+    //if (!index.isValid())
+    if (!index.isValid() || !mList)
         return QVariant();
 
     // FIXME: Implement me!
+    //54
+    const ToDoItem item = mList->items().at(index.row());
+
     //13
+//    switch (role) {
+//    case DoneRole:
+//        return QVariant(false);
+//    case DescriptionRole:
+//        return QVariant(QStringLiteral("Test description"));
+//    }
+//    return QVariant();
+
+    //55
     switch (role) {
     case DoneRole:
-        return QVariant(false);
+        return QVariant(item.done);
     case DescriptionRole:
-        return QVariant(QStringLiteral("Test description"));
+        return QVariant(item.description);
     }
     return QVariant();
 }
 
 bool ToDoModel::setData(const QModelIndex &index, const QVariant &value, int role)
 {
-    if (data(index, role) != value) {
+    //56
+    if(!mList){
+        return false;
+    }
+
+    //57
+    ToDoItem item = mList->items().at(index.row());
+
+    //58
+    switch (role) {
+    case DoneRole:
+        item.done = value.toBool();
+        break;
+    case DescriptionRole:
+        item.description = value.toString();
+        break;
+    }
+
+    //59
+    //if (data(index, role) != value) {
+    if(mList->setItemAt(index.row(), item)){
         // FIXME: Implement me!
         emit dataChanged(index, index, QVector<int>() << role);
         return true;

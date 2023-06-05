@@ -17,6 +17,9 @@ int main(int argc, char *argv[])
 
     //15
     qmlRegisterType<ToDoModel>("ToDo", 1, 0, "ToDoModel");
+    //60
+    qmlRegisterUncreatableType<ToDoList>("ToDo", 1, 0, "ToDoList",
+                       QStringLiteral("ToDoList should not be created in QML"));
 
     //41
     ToDoList toDoList;
