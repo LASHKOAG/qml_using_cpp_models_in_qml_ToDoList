@@ -3,9 +3,16 @@
 
 #include <QAbstractListModel>
 
+//43
+class ToDoList;
+
 class ToDoModel : public QAbstractListModel
 {
     Q_OBJECT
+    //44
+    //Q_PROPERTY(ToDoList *list READ list WRITE setList NOTIFY listChanged)
+    //45
+    Q_PROPERTY(ToDoList *list READ list WRITE setList)
 
 public:
     explicit ToDoModel(QObject *parent = nullptr);
@@ -30,7 +37,12 @@ public:
     //10
     virtual QHash<int, QByteArray> roleNames() const override;
 
+    ToDoList *list() const;
+    void setList(ToDoList *list);
+
 private:
+    //46
+    ToDoList *mList; //47 make refactor -> setter and getter
 };
 
 #endif // TODOMODEL_H

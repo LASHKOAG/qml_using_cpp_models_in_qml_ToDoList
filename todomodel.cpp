@@ -1,7 +1,13 @@
 #include "todomodel.h"
 
+//48
+#include "todolist.h"
+
+//49
+//mList(nullptr) in Constructor
+
 ToDoModel::ToDoModel(QObject *parent)
-    : QAbstractListModel(parent)
+    : QAbstractListModel(parent), mList(nullptr)
 {
 }
 
@@ -59,4 +65,14 @@ QHash<int, QByteArray> ToDoModel::roleNames() const
     names[DescriptionRole] = "description";
 
     return names;
+}
+
+ToDoList *ToDoModel::list() const
+{
+    return mList;
+}
+
+void ToDoModel::setList(ToDoList *list)
+{
+    mList = list;
 }
