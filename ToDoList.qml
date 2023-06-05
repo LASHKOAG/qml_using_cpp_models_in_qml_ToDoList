@@ -3,6 +3,9 @@ import QtQuick.Window 2.12
 import QtQuick.Controls 2.5
 import QtQuick.Layouts 1.3
 
+//16
+import ToDo 1.0
+
 Frame {
     ListView {
         implicitWidth: 250
@@ -13,19 +16,25 @@ Frame {
         //model: 100
 
         //2
-        model: ListModel {
-            //3
-            ListElement {
-                //done: - role; description: -role
-                done: true
-                description: "Wash the car"
-            }
-            ListElement {
-                //done: - role; description: -role
-                done: false
-                description: "Fix the sink"
-            }
+//        model: ListModel {
+//            //3
+//            ListElement {
+//                //done: - role; description: -role
+//                done: true
+//                description: "Wash the car"
+//            }
+//            ListElement {
+//                //done: - role; description: -role
+//                done: false
+//                description: "Fix the sink"
+//            }
+//        }
+
+        //17
+        model: ToDoModel {
+
         }
+
 
         delegate: RowLayout {
             width: parent.width
